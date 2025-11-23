@@ -7,13 +7,11 @@
   </head>
   <body>
     <h1 style="text-align: center; Color: green;">Get to know todays date</h1>
-    <div style="display: flex;">
+    <div style="text-align: center;">
         <p>Summertime?</p>
-        <input type="checkbox" name="checkbox" id="checkbox">
+        <input type="checkbox" name="checkbox" id="checkbox" onchange="getDate()" style="background-color: aquamarine; color: aqua;">
     </div>
-    <div>
-        <button onclick="getDate()">Get date</button>
-    </div>
+
     <p id="p" style="text-align: center;"></p>
  
     <script>
@@ -58,6 +56,8 @@
 
         paragraph.innerText = `Date: ${formatDate} - ${formatTime}`;
       }
+
+      getDate()
     </script>
   </body>
 </html>
