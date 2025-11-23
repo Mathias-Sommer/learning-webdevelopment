@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = 0;
+        let number2 = 0;
+        let number3 = "0";
+
+        console.log(number == number2)  // 0 = 0 ?   yes -> true
+        console.log(number == number3)  // 0 = "0" ? yes -> true
+                                        // yes but not same datatype
+        
+        console.log(number === number3) // comparing datatype & value
+                                        // so number is 0 and number3 is "0"
+                                        // they have the same value
+                                        // but not the same datatype
+                                        // so it returns false
+    </script>
+</body>
+</html>

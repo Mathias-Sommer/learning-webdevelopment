@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        // can nest these setTimeout with anonymous functions
+        const seconds = 10
+        const sleepTime = seconds * 1000
+
+        setTimeout(function(){
+            console.log("waited 2500ms")
+
+            setTimeout(function(){
+                console.log("waited 5000ms")
+
+                setTimeout(function(){
+                    console.log(`waited ${seconds} seconds`)
+
+                }, sleepTime)
+            }, 5000)
+        }, 2500)
+
+        console.log("It prints this before the setTimeout")
+       
+    </script>
+</body>
+</html>

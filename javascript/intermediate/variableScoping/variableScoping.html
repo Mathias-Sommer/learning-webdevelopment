@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const isMathiasHandsome = true;
+
+        function someFunction() {
+            var varName = "Thing";
+            console.log(varName)
+            // varName can only be accessed inside the function
+        }
+
+        if(isMathiasHandsome){
+            const text = "Mathias is very handsome";
+            console.log(text, isMathiasHandsome)
+            var text2 = "Accessed outside"
+            // also is not accessible outside the braces { }
+            // you can use "global variables" like isMathiasHandsome
+            // OR use "var" variable type. That is accessible
+        }
+
+        console.log(text2)
+
+        // ----------Variable hoisting -----
+        console.log("First", randomVariable); // returns undefined
+                                              // but the program knows
+                                              // that we are gonna have a
+                                              // variable, so it's gonna go
+                                              // var randomVariable;
+        var randomVariable = "Hello World";
+        console.log("Second", randomVariable)
+    </script>
+</body>
+</html>

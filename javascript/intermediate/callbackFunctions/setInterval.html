@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 class="heading-1">This is a heading</h1>
+    <h2 class="heading-2">This is a subheading</h2>
+    <p class="color-change" id="p-id">Change color</p>
+
+    <input type="number" value="2.5" id="input-color" /> <br />
+    <br />
+    <button onclick="handleOnClick()">Start color change</button>
+
+    <script>
+      // is doing things in this function each 2000ms
+      // setInterval(function(){
+      //     console.log("Doing stuff")
+      // }, 2000)
+      
+
+
+      function handleOnClick() {
+        var color = document.getElementById("input-color");
+        var paragraph = document.getElementById("p-id");
+        var colorTimeChange = color.value * 1000
+
+        paragraph.style.color = "blue";
+        
+
+        setInterval(function changeColor() {
+          console.log(`Changed every ${color.value}`);
+          
+          if(paragraph.style.color == "red"){
+              paragraph.style.color = "green";
+          }
+          else{
+            paragraph.style.color = "red"
+          }
+
+        }, colorTimeChange);
+      }
+    </script>
+  </body>
+</html>
