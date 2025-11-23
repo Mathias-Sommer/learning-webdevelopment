@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 style="text-align: center; Color: green;">Get to know todays date</h1>
+    <div style="display: flex;">
+        <p>Summertime?</p>
+        <input type="checkbox" name="checkbox" id="checkbox">
+    </div>
+    <div>
+        <button onclick="getDate()">Get date</button>
+    </div>
+    <p id="p" style="text-align: center;"></p>
+ 
+    <script>
+    //   let date = new Date(2025, 11, 23);
+    //   console.log(date);
+    //   console.log(date.getFullYear());
+    //   console.log(date.getMonth());
+    //   console.log(date.getDate());
+
+
+    function getDate() {
+        const isoFormat = new Date().toISOString();
+        console.log(isoFormat);
+
+        var formatDate = isoFormat
+            .split("T", 1)
+            .toString()
+            .split("-")
+            .reverse()
+            .toString()
+            .replaceAll(",", "-");
+        var formatTime;
+        var summerTime = document.getElementById("checkbox");
+        var paragraph = document.getElementById("p");
+
+        if (summerTime.checked) {
+            formatTime = isoFormat.split("T", 2).pop(0).split(":", 2);
+            var appendNumber = Number(formatTime[0]) + 1;
+            formatTime[0] = String(appendNumber);
+
+            formatTime = formatTime.toString().replace(",", ":");
+
+            console.log(formatTime);
+        } else {
+            formatTime = isoFormat
+            .split("T", 2)
+            .pop(0)
+            .split(":", 2)
+            .toString()
+            .replace(",", ":");
+        }
+
+        paragraph.innerText = `Date: ${formatDate} - ${formatTime}`;
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // runs forever until condition is false
+
+        let number = 0;
+        while(number < 50){
+            number++; // if this wasn't incremented each itereation, would be infinite loop.
+            console.log(number);
+        }
+
+        number = 0;
+        while(true){
+            number++;
+
+            if(number === 32){
+                break
+            }
+            console.log(number)
+        }
+    </script>
+</body>
+</html>

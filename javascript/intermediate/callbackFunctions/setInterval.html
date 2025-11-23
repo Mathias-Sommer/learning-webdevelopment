@@ -26,11 +26,10 @@
         var color = document.getElementById("input-color");
         var paragraph = document.getElementById("p-id");
         var colorTimeChange = color.value * 1000
+        var count = 0;
 
-        paragraph.style.color = "blue";
-        
-
-        setInterval(function changeColor() {
+       const interval = setInterval(function () {
+        count++;
           console.log(`Changed every ${color.value}`);
           
           if(paragraph.style.color == "red"){
@@ -40,8 +39,18 @@
             paragraph.style.color = "red"
           }
 
+          // can break out after x amount of time.
+          
+          if(count === 4){
+            paragraph.style.color = "black"
+              clearInterval(interval);
+            }
+          
         }, colorTimeChange);
       }
+
+      // can clear interval here as well
+      // clearInterval(interval);
     </script>
   </body>
 </html>
